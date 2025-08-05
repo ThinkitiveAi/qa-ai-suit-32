@@ -18,9 +18,9 @@ test('Complete Healthcare Provider Workflow', async ({ page }) => {
 
   // Fill provider details
   await page.getByRole('textbox', { name: 'First Name *' }).click();
-  await page.getByRole('textbox', { name: 'First Name *' }).fill('Danny');
+  await page.getByRole('textbox', { name: 'First Name *' }).fill('lavin');
   await page.getByRole('paragraph').filter({ hasText: 'Last Name' }).click();
-  await page.getByRole('textbox', { name: 'Last Name *' }).fill('Defy');
+  await page.getByRole('textbox', { name: 'Last Name *' }).fill('tim');
   await page.getByRole('combobox', { name: 'Provider Type' }).click();
   await page.getByRole('option', { name: 'PSYD' }).click();
   await page.getByRole('combobox', { name: 'specialities' }).click();
@@ -28,13 +28,13 @@ test('Complete Healthcare Provider Workflow', async ({ page }) => {
   await page.getByRole('combobox', { name: 'Role *' }).click();
   await page.getByRole('option', { name: 'Provider' }).click();
   await page.getByRole('textbox', { name: 'DOB' }).click();
-  await page.getByRole('textbox', { name: 'DOB' }).fill('02-20-12001');
+  await page.getByRole('textbox', { name: 'DOB' }).fill('02-20-1999');
   await page.getByRole('combobox', { name: 'Gender *' }).click();
   await page.getByRole('option', { name: 'Male', exact: true }).click();
   await page.getByRole('textbox', { name: 'NPI Number', exact: true }).click();
-  await page.getByRole('textbox', { name: 'NPI Number', exact: true }).fill('2325648784');
+  await page.getByRole('textbox', { name: 'NPI Number', exact: true }).fill('8326799769');
   await page.getByRole('textbox', { name: 'Email *' }).click();
-  await page.getByRole('textbox', { name: 'Email *' }).fill('Danny.Defy@mailor.com');
+  await page.getByRole('textbox', { name: 'Email *' }).fill('lavin.tim@mailor.com');
   await page.getByRole('button', { name: 'Save' }).click();
 
   // 3. Set Availability - Navigate to Scheduling and set up availability
@@ -44,7 +44,7 @@ test('Complete Healthcare Provider Workflow', async ({ page }) => {
 
   // Set provider and basic settings
   await page.locator('form').filter({ hasText: 'Select Provider *Select' }).getByLabel('Open').click();
-  await page.getByRole('option', { name: 'Danny Defy' }).click();
+  await page.getByRole('option', { name: 'lavin tim' }).click();
   await page.locator('form').filter({ hasText: 'Time Zone *Time Zone *' }).getByLabel('Open').click();
   await page.getByRole('option', { name: 'Alaska Standard Time (UTC -9)' }).click();
   await page.locator('form').filter({ hasText: 'Booking Window *Booking' }).getByLabel('Open').click();
@@ -55,7 +55,7 @@ test('Complete Healthcare Provider Workflow', async ({ page }) => {
   await page.locator('form').filter({ hasText: 'Start Time *Start Time *' }).getByLabel('Open').click();
   await page.getByRole('option', { name: '12:00 AM' }).click();
   await page.locator('form').filter({ hasText: 'End Time *End Time *' }).getByLabel('Open').click();
-  await page.getByRole('option', { name: ':00 AM (8 hrs)' }).click();
+  await page.getByRole('option', { name: '8:00 AM (8 hrs)' }).click();
   await page.getByRole('checkbox', { name: 'Telehealth' }).check();
 
   // Set Tuesday availability
@@ -63,7 +63,7 @@ test('Complete Healthcare Provider Workflow', async ({ page }) => {
   await page.locator('form').filter({ hasText: 'Start Time *Start Time *' }).getByLabel('Open').click();
   await page.getByRole('option', { name: '12:00 AM' }).click();
   await page.locator('form').filter({ hasText: 'End Time *End Time *' }).getByLabel('Open').click();
-  await page.getByRole('option', { name: ':00 AM (8 hrs)' }).click();
+  await page.getByRole('option', { name: '8:00 AM (8 hrs)' }).click();
   await page.getByRole('checkbox', { name: 'Telehealth' }).check();
 
   // Set Wednesday availability
@@ -71,7 +71,7 @@ test('Complete Healthcare Provider Workflow', async ({ page }) => {
   await page.locator('form').filter({ hasText: 'Start Time *Start Time *' }).getByLabel('Open').click();
   await page.getByRole('option', { name: '12:00 AM' }).click();
   await page.locator('form').filter({ hasText: 'End Time *End Time *' }).getByLabel('Open').click();
-  await page.getByRole('option', { name: ':00 AM (8 hrs)' }).click();
+  await page.getByRole('option', { name: '8:00 AM (8 hrs)' }).click();
   await page.getByRole('checkbox', { name: 'Telehealth' }).check();
 
   // Set Thursday availability
@@ -79,7 +79,7 @@ test('Complete Healthcare Provider Workflow', async ({ page }) => {
   await page.locator('div').filter({ hasText: /^Start Time \*$/ }).nth(1).click();
   await page.getByRole('option', { name: '12:00 AM' }).click();
   await page.locator('form').filter({ hasText: 'End Time *End Time *' }).getByLabel('Open').click();
-  await page.getByRole('option', { name: ':00 AM (8 hrs)' }).click();
+  await page.getByRole('option', { name: '8:00 AM (8 hrs)' }).click();
   await page.getByRole('checkbox', { name: 'Telehealth' }).check();
 
   // Set Friday availability
@@ -87,7 +87,7 @@ test('Complete Healthcare Provider Workflow', async ({ page }) => {
   await page.locator('div').filter({ hasText: /^Start Time \*$/ }).nth(1).click();
   await page.getByRole('option', { name: '12:00 AM' }).click();
   await page.locator('form').filter({ hasText: 'End Time *End Time *' }).getByLabel('Open').click();
-  await page.getByRole('option', { name: ':00 AM (8 hrs)' }).click();
+  await page.getByRole('option', { name: '8:00 AM (8 hrs)' }).click();
   await page.getByRole('checkbox', { name: 'Telehealth' }).check();
 
   // Set appointment type and duration settings
@@ -110,9 +110,9 @@ test('Complete Healthcare Provider Workflow', async ({ page }) => {
   // Fill patient details
   await page.locator('form').filter({ hasText: 'Provider Group' }).getByLabel('Open').click();
   await page.getByRole('textbox', { name: 'First Name *' }).click();
-  await page.getByRole('textbox', { name: 'First Name *' }).fill('Shubh');
+  await page.getByRole('textbox', { name: 'First Name *' }).fill('Sonmy');
   await page.getByRole('textbox', { name: 'Last Name *' }).click();
-  await page.getByRole('textbox', { name: 'Last Name *' }).fill('Singu');
+  await page.getByRole('textbox', { name: 'Last Name *' }).fill('Van');
   await page.getByRole('textbox', { name: 'Date Of Birth *' }).click();
   await page.getByRole('textbox', { name: 'Date Of Birth *' }).fill('02-03-2001');
   await page.getByRole('combobox', { name: 'Gender *' }).click();
@@ -122,7 +122,7 @@ test('Complete Healthcare Provider Workflow', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Mobile Number *' }).click();
   await page.getByRole('textbox', { name: 'Mobile Number *' }).fill('(786) 543-5723');
   await page.getByRole('textbox', { name: 'Email *' }).click();
-  await page.getByRole('textbox', { name: 'Email *' }).fill('Shubh.singu@mailor.com');
+  await page.getByRole('textbox', { name: 'Email *' }).fill('Sonmy.Van@mailor.com');
   await page.getByRole('button', { name: 'Save' }).click();
 
   // 5. Appointment Booking - Create a new appointment for the patient
@@ -131,7 +131,7 @@ test('Complete Healthcare Provider Workflow', async ({ page }) => {
 
   // Fill appointment details
   await page.getByRole('combobox', { name: 'Patient Name *' }).click();
-  await page.getByRole('option', { name: 'Shubh Singu 3 Feb' }).click();
+  await page.getByRole('option', { name: 'Sonmy Van 3 Feb' }).click();
   await page.getByRole('combobox', { name: 'Appointment Type *' }).click();
   await page.getByRole('option', { name: 'New Patient Visit' }).click();
   await page.getByRole('textbox', { name: 'Reason For Visit *' }).click();
@@ -142,12 +142,21 @@ test('Complete Healthcare Provider Workflow', async ({ page }) => {
 
   // Select provider and schedule appointment
   await page.getByRole('combobox', { name: 'Provider *' }).click();
-  await page.getByRole('option', { name: 'Danny Defy' }).click();
+   await page.getByRole('combobox', { name: 'Provider *' }).fill('lavin tim');
+   await page.getByRole('option', { name: 'lavin tim' }).click();
+
+  await page.getByRole('combobox', { name: 'Provider *' }).click();
+ // await page.getByRole('option', { name: 'Clavin Tim' }).click();
   await page.getByRole('button', { name: 'View availability' }).click({
     button: 'right'
   });
   await page.getByRole('button', { name: 'View availability' }).click();
-  await page.getByRole('gridcell', { name: '24' }).click();
-  await page.getByRole('button', { name: '06:15 AM - 06:45 AM' }).click();
+   await page.getByRole('gridcell', { name: '6', exact: true }).click();
+  await page.getByRole('button', { name: '12:00 AM - 12:30 AM' }).click();
+ // await page.getByRole('gridcell', { name: '5' }).click();
+  //await page.getByRole('button', { name: '06:15 AM - 06:45 AM' }).click();
   await page.getByRole('button', { name: 'Save And Close' }).click();
+   await page.getByTestId('PersonIcon').locator('path').click();
+  await page.getByText('Log Out').click();
+  await page.getByRole('button', { name: 'Yes,Sure' }).click();
 });
